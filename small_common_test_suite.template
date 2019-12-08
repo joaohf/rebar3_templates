@@ -1,0 +1,7 @@
+{description, "Common Test with minimal information in the functional header"}.
+{variables, [
+    {name, "myct", "Name of the common test suite"},
+    {desc, "A ct test", "Short description of the test suite"}
+]}.
+
+{template, "large_common_test_suite.erl", "test/{{name}}_SUITE.erl"}.

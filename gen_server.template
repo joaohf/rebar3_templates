@@ -1,0 +1,7 @@
+{description, "A basic OTP gen server"}.
+{variables, [
+    {name, "Name of the gen server"}
+]}.
+
+{template, "gen_server.erl", "src/{{name}}.erl"}.
+
