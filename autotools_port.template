@@ -1,0 +1,9 @@
+{description, "GNU Autotools skeleton for building C/C++ Erlang Port"}.
+{variables, [{name, "my_port", "Name of the Erlang Port"}]}.
+
+{template, "configure.ac", "configure.ac"}.
+{template, "Makefile.am", "Makefile.am"}.
+
+{dir, "c_src/src"}.
+{template, "c_src_Makefile_port.am", "c_src/Makefile.am"}.
+{template, "erlang_port.c", "c_src/{{name}}.c"}.

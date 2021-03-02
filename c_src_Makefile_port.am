@@ -1,0 +1,19 @@
+AUTOMAKE_OPTIONS = foreign
+
+libexec_PROGRAMS =
+
+if !STUBBED_MODE
+libexec_PROGRAMS += {{name}}
+endif
+
+{{name}}_CFLAGS = --pedantic -g -Wall -std=c99 -fPIC -Wno-missing-prototypes $(EI_CFLAGS)
+
+{{name}}_LDFLAGS = -Wl,-Bstatic $(EI_LIBS) -Wl,-Bdynamic
+
+{{name}}_SOURCES = {{name}}.c
+
+clean-local:
+	rm -f $(abs_top_builddir)/priv/$(PACKAGE)
+
+install-exec-hook:
+	mv $(DESTDIR)$(libexecdir)/$(PACKAGE) $(abs_top_builddir)/priv
